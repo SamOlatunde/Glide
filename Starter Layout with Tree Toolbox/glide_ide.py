@@ -49,7 +49,7 @@ layout = [
     [
         # Toolbox (Collapsible)
         sg.Column([
-            [sg.Text("Toolbox", font=("Arial", 12, "bold"))],
+            [sg.Text("Toolbox")],
             [sg.Tree(data=tree_data, headings=[], auto_size_columns=False,
                      num_rows=10, col0_width=20, key="-TOOLBOX-", enable_events=True,
                      show_expanded=False, justification='left')],
@@ -57,7 +57,6 @@ layout = [
 
         # Code Editor + Variables
         sg.Column([
-            [sg.Text("Glide - Hybrid IDE", font=("Arial", 14, "bold"))],
             [sg.Text("Code Editor")],
             [sg.Multiline(size=(40, 15), key="-CODE-", expand_x=True, expand_y=True)],
             [sg.Button("Run Code"), sg.Button("Clear Output")],
