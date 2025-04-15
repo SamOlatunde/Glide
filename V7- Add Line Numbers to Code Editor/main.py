@@ -6,7 +6,7 @@ from code_editor import create_code_editor
 def main():
     layout = create_layout()
     window = sg.Window("Glide - Hybrid IDE", layout, resizable=True, finalize=True)
-    
+
     # Create and attach the custom CodeEditor into the Canvas
     if "-CODE_CANVAS-" in window.AllKeysDict:
         editor = create_code_editor(window["-CODE_CANVAS-"])

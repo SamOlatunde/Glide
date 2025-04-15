@@ -3,12 +3,12 @@ import PySimpleGUI as sg
 # Define toolbox commands: each category maps command names to code snippets.
 toolbox_commands = {
     "Basics": {
-        "Print": "print('Hello, world!')",
-        "Make Variable": "x = 5",
+        "Comment":"# <Enter Comment Here>",
+        "Print": "print('<Enter Value or Variable Name Here>')",
+        "Make Variable": "<Variable Name Here> = <Value or Variable Name Here>",
         "Declare multiple Variables": "a, b, c = 1, 2, 3",
-        "False": "flag = False",
-        "True": "status = True",
-        "None": "value = None",
+        "Bool": "<Enter Variable Name> = <Enter a boolean value (True/False)>",
+        "Input": "<Variable Name> = input('<Enter prompt for user>')",
     },
     "Logical Operators": {
         "and": "x = True and False\nprint(x)",
@@ -38,15 +38,6 @@ toolbox_commands = {
         "Increment by value": "x = 1\nx += 1\nprint(x)",
         "Decrement by value": "x = 2\nx -= 1\nprint(x)"
     },
-    "File Operations": {
-        "open()": "file = open('file.txt', 'r')",
-        "file.write()": "file = open('file.txt', 'w')\nfile.write('Hello')",
-        "file.close()": "file = open('file.txt', 'r')\nfile.close()",
-    },
-    "Input/Output": {
-        "Basic Input": "name = input('Enter your name: ')\nprint('Hello,', name)",
-        "Input with Conversion": "age = int(input('Enter your age: '))\nprint('In 5 years you will be', age + 5)",
-    },
 }
 
 def get_toolbox_tree():
@@ -57,24 +48,22 @@ def get_toolbox_tree():
     toolbox_data.Insert("", "Loops", "Loops", [])
     toolbox_data.Insert("", "Functions", "Functions", [])
     toolbox_data.Insert("", "Math Operations", "Math Operations", [])
-    toolbox_data.Insert("", "File Operations", "File Operations", [])
-    toolbox_data.Insert("", "Input/Output", "Input/Output", [])
 
-    toolbox_data.Insert("Basics", "Print", "Outputs text or variables to the screen.", [])
+    toolbox_data.Insert("Basics", "Comment", "Comment", [])
+    toolbox_data.Insert("Basics", "Print", "Print", [])
     toolbox_data.Insert("Basics", "Make Variable", "Make a Variable", [])
-    toolbox_data.Insert("Basics", "Declare Multiple Variables", "Assigns multiple values at once.", [])
-    toolbox_data.Insert("Basics", "False", "Boolean value representing falsehood.", [])
-    toolbox_data.Insert("Basics", "True", "Boolean value representing truth.", [])
-    toolbox_data.Insert("Basics", "None", "Represents no value or null.", [])
-    toolbox_data.Insert("Logical Operators", "and", "Logical AND operator", [])
-    toolbox_data.Insert("Logical Operators", "or", "Logical OR operator", [])
-    toolbox_data.Insert("Logical Operators", "not", "Logical NOT operator", [])
-    toolbox_data.Insert("Conditionals", "if Statement", "Conditional statement", [])
-    toolbox_data.Insert("Conditionals", "if-else Statement", "if else conditional statement", [])
+    toolbox_data.Insert("Basics", "Declare multiple Variables", "Make multiple Variables", [])
+    toolbox_data.Insert("Basics", "Bool", "Declare a boolean", [])
+    toolbox_data.Insert("Basics", "Input", "Input", [])
+    toolbox_data.Insert("Logical Operators", "and", "AND", [])
+    toolbox_data.Insert("Logical Operators", "or", "OR", [])
+    toolbox_data.Insert("Logical Operators", "not", "NOT", [])
+    toolbox_data.Insert("Conditionals", "if Statement", "if statement", [])
+    toolbox_data.Insert("Conditionals", "if-else Statement", "if-else statement", [])
     toolbox_data.Insert("Loops", "For Loop", "For Loop", [])
     toolbox_data.Insert("Loops", "While Loop", "While Loop", [])
-    toolbox_data.Insert("Functions", "Define Fruitless Function", "Define function without a return value", [])
-    toolbox_data.Insert("Functions", "Define Fruitful Function", "Define function with a return value", [])
+    toolbox_data.Insert("Functions", "Define Fruitless Function", "Function with Return", [])
+    toolbox_data.Insert("Functions", "Define Fruitful Function", "Function without return", [])
     toolbox_data.Insert("Functions", "Function Call", "Function Call", [])
     toolbox_data.Insert("Math Operations", "Addition", "Addition", [])
     toolbox_data.Insert("Math Operations", "Subtraction", "Subtraction", [])
@@ -84,9 +73,5 @@ def get_toolbox_tree():
     toolbox_data.Insert("Math Operations", "Exponentiation", "Raise to a power", [])
     toolbox_data.Insert("Math Operations", "Increment by value", "Increment by value", [])
     toolbox_data.Insert("Math Operations", "Decrement by value", "Decrement by value", [])
-    toolbox_data.Insert("File Operations", "open()", "Open input file", [])
-    toolbox_data.Insert("File Operations", "file.write()", "Write to input file", [])
-    toolbox_data.Insert("File Operations", "file.close()", "Close input file", [])
-    toolbox_data.Insert("Input/Output", "Basic Input", "Basic Input", [])
-    toolbox_data.Insert("Input/Output", "Input With Conversion", "Input with Conversion", [])
+
     return toolbox_data
