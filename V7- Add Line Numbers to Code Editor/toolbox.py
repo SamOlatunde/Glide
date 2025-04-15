@@ -52,9 +52,13 @@ toolbox_commands = {
 def get_toolbox_tree():
     toolbox_data = sg.TreeData()
     toolbox_data.Insert("", "Basics", "Basics", [])
+    toolbox_data.Insert("", "Logical Operators", "Logical Operators", [])
     toolbox_data.Insert("", "Conditionals", "Conditionals", [])
     toolbox_data.Insert("", "Loops", "Loops", [])
     toolbox_data.Insert("", "Functions", "Functions", [])
+    toolbox_data.Insert("", "Math Operations", "Math Operations", [])
+    toolbox_data.Insert("", "File Operations", "File Operations", [])
+    toolbox_data.Insert("", "Input/Output", "Input/Output", [])
 
     toolbox_data.Insert("Basics", "Print", "Outputs text or variables to the screen.", [])
     toolbox_data.Insert("Basics", "Make Variable", "Make a Variable", [])
