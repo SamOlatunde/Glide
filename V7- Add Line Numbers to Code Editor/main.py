@@ -2,7 +2,7 @@ import PySimpleGUI as sg
 from ui import create_layout
 from events import handle_events
 from code_editor import create_code_editor
-placeholder = "Insert a comment here"
+placeholder = "<Insert a comment here>"
 
 def main():
    layout = create_layout()
