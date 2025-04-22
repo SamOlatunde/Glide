@@ -27,6 +27,10 @@ class CodeEditor(tk.Frame):
         self.text.tag_configure("string", foreground="#a42107")
         self.text.tag_configure("primitive", foreground="blue")
 
+        self.placeholder = "<Insert a comment here>"
+        self.text.insert("1.0", self.placeholder)
+        self.text.config(fg="#aaaaaa")
+
         # Events
         self.text.bind("<KeyRelease>", self.on_key_release)
         self.text.bind("<<Paste>>", self.on_key_release)
@@ -147,6 +151,17 @@ class CodeEditor(tk.Frame):
                         self.text.tag_add("builtin", pos, end_index)
 
                 start_index = end_index
+
+    def clear_placeholder(self, event=None):
+        # Clear placeholder when focus is gained
+        if self.text.get("1.0", "end-1c") == self.placeholder:
+            self.text.delete("1.0", "end")
+
+    def restore_placeholder(self, event=None):
+        # Restore placeholder if the editor is empty
+        if not self.text.get("1.0", "end-1c").strip():
+            self.text.insert("1.0", self.placeholder)
+            self.text.config(fg="#aaaaaa")
 
 def create_code_editor(canvas):
     tk_canvas = canvas.TKCanvas
