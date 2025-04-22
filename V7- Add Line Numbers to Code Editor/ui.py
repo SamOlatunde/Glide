@@ -2,7 +2,6 @@ import PySimpleGUI as sg
 from toolbox import get_toolbox_tree
 
 def create_layout():
-    placeholder = "Insert a comment here"
     toolbox_tree = get_toolbox_tree()
 
     # Toolbox pane
@@ -13,27 +12,36 @@ def create_layout():
                  col0_width=20, expand_x=True, expand_y=True)]
     ], expand_x=True, expand_y=True)
 
-    #NOTICE: the code editor is now a Canvas, not a Multiline
+    # Code editor (Canvas) - Add placeholder functionality
     code_canvas = sg.Canvas(key="-CODE_CANVAS-", size=(600, 400))
 
-    var_display = sg.Multiline(size=(40, 4), key="-VARS-", disabled=True, expand_x=True)
+    # Define the placeholder text for Multiline elements
+    placeholder_vars = "<Insert comments here>"
+    placeholder_output = "<Insert comments here>"
 
-    output_panel = sg.Multiline(size=(30, 15), key="-OUTPUT-", disabled=True, expand_x=True, expand_y=True)
+    # Variable display (with placeholder text)
+    var_display = sg.Multiline(size=(40, 4), key="-VARS-", disabled=True, expand_x=True,
+                                default_text=placeholder_vars)  # Add placeholder
+
+    # Output panel (with placeholder text)
+    output_panel = sg.Multiline(size=(30, 15), key="-OUTPUT-", disabled=True, expand_x=True, expand_y=True,
+                                 default_text=placeholder_output)  # Add placeholder
 
     layout = [
-        [sg.Pane([
-            toolbox_pane,
-            sg.Column([
+        [sg.Pane([  # Split the layout horizontally
+            toolbox_pane,  # Toolbox panel
+            sg.Column([  # Editor and variables column
                 [sg.Text("Code Editor")],
-                [code_canvas],
+                [code_canvas],  # Code canvas
                 [sg.Button("Run Code"), sg.Button("Reset")],
                 [sg.Text("Variables:")],
-                [var_display]
+                [var_display]  # Variable display with placeholder
             ], expand_x=True, expand_y=True),
-            sg.Column([
+            sg.Column([  # Output column
                 [sg.Text("Output:")],
-                [output_panel]
+                [output_panel]  # Output panel with placeholder
             ], expand_x=True, expand_y=True)
         ], orientation="h", handle_size=10, expand_x=True, expand_y=True)]
     ]
+
     return layout
