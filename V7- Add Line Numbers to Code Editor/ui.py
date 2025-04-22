@@ -2,6 +2,7 @@ import PySimpleGUI as sg
 from toolbox import get_toolbox_tree
 
 def create_layout():
+    placeholder = "Insert a comment here"
     toolbox_tree = get_toolbox_tree()
 
     # Toolbox pane
