@@ -7,26 +7,28 @@ toolbox_commands = {
         "Print": "print('<Enter Value or Variable Name Here>')",
         "Make Variable": "<Variable Name Here> = <Value or Variable Name Here>",
         "Declare multiple Variables": "a, b, c = 1, 2, 3",
-        "Bool": "<Enter Variable Name> = <Enter a boolean value (True/False)>",
         "Input": "<Variable Name> = input('<Enter prompt for user>')",
     },
     "Logical Operators": {
-        "and": "x = True and False\nprint(x)",
-        "or": "x = True or False\nprint(x)",
-        "not": "x = not True\nprint(x)",
+        "and": "<Conditional 1> and <Conditional 2>",
+        "or": "<Conditional 1> or <Conditional 2>",
+        "not": "not <variable name or conditional>",
     },
     "Conditionals": {
-        "if Statement": "x = 15\nif x > 10:\n    print('X is large')",
-        "if-else Statement": "x = 5\nif x > 10:\n    print('X is large')\nelse:\n    print('X is small')",
+        "if Statement": "if <enter conditional here>:\n    <enter logic for if statement here>",
+        "if-else Statement": "<enter conditional here>:\n    <enter logic for if statement here>\nelse:\n    <enter logic for else statement here>",
+        "if-elif-else Statement": "if <enter conditional here>:\n <Enter logic here>\n elif <enter conditional here>:\n <Enter logic here>\n else:\n <Enter logic here>"
     },
     "Loops": {
-        "For Loop": "for i in range(5):\n    print(i)",
-        "While Loop": "x = 0\nwhile x < 5:\n    print(x)\n    x += 1",
+        "For Loop": "for item in <Enter iterable here>:\n    <Enter logic here>",
+        "While Loop": "<Enter conditional here>\n    <Enter logic here>",
+        "Nested Loop": "for outer in <enter iterable here>:\n for inner in <enter iterable here>:\n if <enter conditional here>: <Enter logic here>",
+        "Do-While Loop": "while True:\n <Enter logic here> \nif not <enter conditional here>:\n break",
     },
     "Functions": {
-        "Define Fruitless Function": "def greet():\n    print('Hi there!')",
-        "Define Fruitful Function": "def add(a, b):\n    return a + b",
-        "Function Call": "greet()\n# or add(2, 3)",
+        "Define Fruitless Function": "def <Function Name>():\n    <Function logic here>",
+        "Define Fruitful Function": "def <Function Name>(a, b):\n    <Function logic here>\n return <Results of Function>",
+        "Function Call": "<Function name here>()",
     },
     "Math Operations": {
         "Addition": "x = 5 + 3\nprint('Result:', x)",
@@ -53,17 +55,19 @@ def get_toolbox_tree():
     toolbox_data.Insert("Basics", "Print", "Print", [])
     toolbox_data.Insert("Basics", "Make Variable", "Make a Variable", [])
     toolbox_data.Insert("Basics", "Declare multiple Variables", "Make multiple Variables", [])
-    toolbox_data.Insert("Basics", "Bool", "Declare a boolean", [])
     toolbox_data.Insert("Basics", "Input", "Input", [])
     toolbox_data.Insert("Logical Operators", "and", "AND", [])
     toolbox_data.Insert("Logical Operators", "or", "OR", [])
     toolbox_data.Insert("Logical Operators", "not", "NOT", [])
     toolbox_data.Insert("Conditionals", "if Statement", "if statement", [])
     toolbox_data.Insert("Conditionals", "if-else Statement", "if-else statement", [])
+    toolbox_data.Insert("Conditionals", "if-elif-else Statement", "if-elif-else Statement", [])
     toolbox_data.Insert("Loops", "For Loop", "For Loop", [])
     toolbox_data.Insert("Loops", "While Loop", "While Loop", [])
-    toolbox_data.Insert("Functions", "Define Fruitless Function", "Function with Return", [])
-    toolbox_data.Insert("Functions", "Define Fruitful Function", "Function without return", [])
+    toolbox_data.Insert("Loops", "Nested Loop", "Nested Loop", [])
+    toolbox_data.Insert("Loops", "Do While Loop", "Do While Loop", [])
+    toolbox_data.Insert("Functions", "Define Fruitless Function", "Define Fruitless Function", [])
+    toolbox_data.Insert("Functions", "Define Fruitful Function", "Define Fruitful Function", [])
     toolbox_data.Insert("Functions", "Function Call", "Function Call", [])
     toolbox_data.Insert("Math Operations", "Addition", "Addition", [])
     toolbox_data.Insert("Math Operations", "Subtraction", "Subtraction", [])
