@@ -16,8 +16,8 @@ def create_layout():
     code_canvas = sg.Canvas(key="-CODE_CANVAS-", size=(600, 400))
 
     # Define the placeholder text for Multiline elements
-    placeholder_vars = "<Insert comments here>"
-    placeholder_output = "<Insert comments here>"
+    placeholder_vars = "<Insert comment here>"
+    placeholder_output = "<Insert comment here>"
 
     # Variable display (with placeholder text)
     var_display = sg.Multiline(size=(40, 4), key="-VARS-", disabled=True, expand_x=True,
